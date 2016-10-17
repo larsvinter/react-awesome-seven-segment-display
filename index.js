@@ -1,3 +1,9 @@
-const AwesomeSevenSegmentDisplay = require('./src/AwesomeSevenSegmentDisplay.js')
+import React from 'react';
 
-module.exports = AwesomeSevenSegmentDisplay
+function SevenSegmentDisplay() {
+  return (
+    <div>katek</div>
+  );
+}
+
+export default SevenSegmentDisplay;
