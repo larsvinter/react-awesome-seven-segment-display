@@ -1,3 +1,3 @@
-const AwesomeButton = require('./src/AwesomeButton.js')
+const AwesomeSevenSegmentDisplay = require('./src/AwesomeSevenSegmentDisplay.js')
 
-module.exports = AwesomeButton
+module.exports = AwesomeSevenSegmentDisplay
