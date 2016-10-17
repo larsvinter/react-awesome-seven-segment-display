@@ -1,0 +1,30 @@
+{
+  "name": "react-awesome-seven-segment-display",
+  "version": "0.0.1",
+  "description": "A React component rendering a seven segment LED display for digits",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larsvinter/react-awesome-seven-segment-display.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "react-awesome-seven-segment-display",
+    "react-native-seven-segment",
+    "react-ui",
+    "seven-segment-led",
+    "lcd display",
+    "led display"
+  ],
+  "author": "Lars Vinter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larsvinter/react-awesome-seven-segment-display/issues"
+  },
+  "homepage": "https://github.com/larsvinter/react-awesome-seven-segment-display#readme",
+  "dependencies": {}
+}
