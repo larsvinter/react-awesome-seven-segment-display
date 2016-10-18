@@ -28,28 +28,14 @@ const digitToSegmentMap = {
   9: [1, 1, 1, 1, 0, 1, 1],
 };
 
-function SevenSegmentDisplay(props) {
-  return (
-    <svg {...props} className="led-container" >
-      <g transform="translate(2,4) scale(2)">
-        {
-          segmentMap.map((Segment, i) => {
-            const myProps = {
-              key: i,
-              x: segmentOffsetMap[i].x,
-              y: segmentOffsetMap[i].y,
-              className: digitToSegmentMap[props.digit][i] ? "led-segment-active" : "led-segment-inactive"
-            }
-            return Segment(myProps);
-          })
-        }
-      </g>
-    </svg>
-  );
-}
+const SevenSegmentDisplay = (props) => 
+  <svg {...props} className="led-container" >
+    <g transform="translate(2,4) scale(2)">
+      { segmentMap.map((Segment, i) => Segment({ key: i, x: segmentOffsetMap[i].x, y: segmentOffsetMap[i].y, className: digitToSegmentMap[props.digit][i] ? "led-segment-active" : "led-segment-inactive"})) }
+    </g>
+  </svg>;
 
 SevenSegmentDisplay.defaultProps = { 
-  width: 200,
   fill: 'red',
   digit: 0,
 };
