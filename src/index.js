@@ -1,20 +1,5 @@
 import React from 'react';
 
-const SegmentVertical = (props) => <rect {...props} width="1" height="4" />;
-const SegmentHorisontal = (props) => <rect {...props} width="5" height="1" />;
-
-const segmentOffsetMap = [
-  { x: 1, y: 0 },
-  { x: 6, y: 1 },
-  { x: 6, y: 6 },
-  { x: 1, y: 10 },
-  { x: 0, y: 6 },
-  { x: 0, y: 1 },
-  { x: 1, y: 5 }
-];
-
-const segmentMap = [ SegmentHorisontal, SegmentVertical, SegmentVertical, SegmentHorisontal, SegmentVertical, SegmentVertical, SegmentHorisontal ];
-
 const digitToSegmentMap = {
   0: [1, 1, 1, 1, 1, 1, 0],
   1: [0, 1, 1, 0, 0, 0, 0],
@@ -30,14 +15,22 @@ const digitToSegmentMap = {
 
 const AwesomeSevenSegmentBase = (props) => 
   <svg {...props} className="led-container" >
-    <g transform="translate(2,4) scale(2)">
-      { segmentMap.map((Segment, i) => Segment({ key: i, x: segmentOffsetMap[i].x, y: segmentOffsetMap[i].y, className: digitToSegmentMap[props.digit][i] ? "led-segment-active" : "led-segment-inactive"})) }
-    </g>
+    { props.digits.split('').map((digit, offset) => {
+      return (<g transform={`scale(2) translate(${1 + (offset * 9)}, 2)`}>
+        { props.segmentMap.map((Segment, i) => {
+            console.log(digitToSegmentMap[digit][i]);
+            return Segment({ key: i, x: props.segmentOffsetMap[i].x, y: props.segmentOffsetMap[i].y, className: digitToSegmentMap[digit][i] ? "led-segment-active" : "led-segment-inactive"}); 
+          })
+        }
+      </g>)
+    })}
+
   </svg>;
 
 AwesomeSevenSegmentBase.defaultProps = { 
   fill: 'red',
   digit: 0,
+  digits: '20',
 };
 
 export default AwesomeSevenSegmentBase;
